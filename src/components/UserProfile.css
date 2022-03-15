@@ -1,0 +1,40 @@
+.repoCard{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #252021;
+    padding: 8px;
+}
+.title{
+    font-size: 19px;
+    font-weight: 600;
+}
+.content{
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    /* padding: 10%; */
+}
+img{
+    border-radius: 50%;
+}
+.detailsHeader{
+    font-weight: 600;
+}
+.details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.description{
+    width: 50%
+}
+.bio{
+    display: flex;
+    justify-content: flex-start;
+}
+.repos{
+    width: 100%;
+    padding-bottom: 30px;
+}
