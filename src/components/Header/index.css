@@ -1,5 +1,13 @@
 .header {
     text-align: center;
     font-size: 20px;
-
+    background-color: #565b5f;
+    height: 50px;
+}
+.siteName{
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: Tahoma, sans-serif;
+    padding-top: 5px;
 }

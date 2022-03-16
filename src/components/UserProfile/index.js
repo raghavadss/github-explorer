@@ -4,7 +4,7 @@ import { fetchUser, searchUserRepos } from "../../actions";
 import SearchBar from "../SearchBar";
 import "./index.css";
 
-const UserProfile = (props) => {  
+const UserProfile = (props) => {
   const { username } = props.match.params;
   const {
     fetchUserAction,
@@ -39,10 +39,10 @@ const UserProfile = (props) => {
           key={repo.id}
           className="repoCard"
         >
-          <div className="">
+          <div className="repoName">
             <div className="title">{repo.name}</div>
           </div>
-          <div className="">
+          <div className="repoForks">
             Forks: {repo.forks_count}
             <br />
             Stars: {repo.stargazers_count}
@@ -53,32 +53,14 @@ const UserProfile = (props) => {
   };
 
   const renderUserProfile = () => {
-    if(!userDetails) return null;
-
-    const userDetailsMap = {
-      Name: userDetails.name,
-      Username: userDetails.login,
-
-      Location: userDetails.location,
-      Email: userDetails.email,
-    };
+    if (!userDetails) return null;
 
     const metricsMap = {
-      "Public Repo Count": userDetails.public_repos,
+      "# Public Repos": userDetails.public_repos,
       Followers: userDetails.followers,
       Following: userDetails.following,
       "Join Date": new Date(userDetails.created_at).toLocaleDateString(),
     };
-    const userDetailsFragment = Object.keys(userDetailsMap).map((key) => {
-      if (userDetailsMap[key])
-        return (
-          <div className="item" key={key}>
-            <div className="detailsHeader">{key}</div>
-            {userDetailsMap[key]}
-          </div>
-        );
-      return null;
-    });
 
     const metricsFragment = Object.keys(metricsMap).map((key) => {
       if (metricsMap[key])
@@ -96,20 +78,31 @@ const UserProfile = (props) => {
         <div className="userDetails">
           <div className="Basic">
             <div className="avatar">
-              <img
-                alt={userDetails.name}
-                src={userDetails.avatar_url}
-              ></img>
+              <img alt={userDetails.name} src={userDetails.avatar_url}></img>
             </div>
-            <div className="basicDetails">{userDetailsFragment}</div>
+            <div className="basicDetails">
+              <div className="name-username">
+                <div className="name">{userDetails.name}</div>
+                <div className="username">{userDetails.login}</div>
+              </div>
+              {userDetails.location ? (
+                <div className="location">{userDetails.location}</div>
+              ) : null}
+            </div>
           </div>
+          {userDetails.email ? (
+            <div className="email">
+              <i class="fa fa-envelope"></i>
+              <span>{userDetails.email}</span>
+            </div>
+          ) : null}
           <div className="bio"> {userDetails.bio}</div>
           <div className="metrics">{metricsFragment}</div>
         </div>
 
         <SearchBar
           flow="userrepo"
-          placeholder={`search for ${userDetails.login}'s repositories`}
+          placeholder={`search for ${userDetails.login}'s repos`}
         />
         <div className="repos">{renderRepos()}</div>
       </div>

@@ -4,9 +4,9 @@ import { updateSearchTerm } from "../../actions";
 import "./index.css";
 
 const SearchBar = (props) => {
-  const [term, setTerm] = useState("");  
+  const [term, setTerm] = useState("");
   const { debouncedTerm, updateSearchTermAction, flow } = props;
-  
+
   const onInputChange = (e) => {
     setTerm(e.target.value);
   };

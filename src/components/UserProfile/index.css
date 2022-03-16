@@ -1,10 +1,15 @@
 .repoCard{
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 0 25%;
-    border-bottom: 1px solid #252021;
+    margin-bottom: 1%;
+    background-color: #dee3e26e;
+    border-radius: 20px;
     padding: 8px;
-    align-self: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 350px;
 }
 .title{
     font-size: 19px;
@@ -29,6 +34,7 @@
 }
 .detailsHeader{
     font-weight: 600;
+    padding-right: 10px;
 }
 .details{
     width: 100%;
@@ -40,8 +46,10 @@
 }
 .bio {
     margin: 20px auto;
-    width: 400px;
-    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+    font-size: 20px;
 }
 .repos{
     width: 100%;
@@ -49,6 +57,12 @@
 }
 .basicDetails {
     margin: 25px 25px;
+    font-size: 24px;
+    transform: translateY(15%);
+}
+
+.basicDetails .item {
+    display: inline-flex;
 }
 
 .metric {
@@ -56,6 +70,8 @@
     justify-content: center;
     padding: 0 5px;
     border-radius: 5px;
+    background-color: #e8bc32bd;
+    margin: 5px;
     
 }
 
@@ -67,4 +83,56 @@
 .metrics {
     display: flex;
     justify-content: center;
+    flex-flow: wrap;
+}
+
+.userDetails {
+    background-color: #aecde46e;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 60%; */
+    border-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 400px;
+    margin-top: 10px;
+}
+
+.repoName {
+    margin-top: .8%;
+    margin-left: 2%;
+}
+
+.repoForks {
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+}
+
+.name{
+    margin-bottom: 0%;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.username{
+    font-size: 18px;
+    color: #3b3939
+}
+
+.location{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    font-size: 20px;
+}
+
+.fa-envelope{
+    margin-right: 10px;
 }

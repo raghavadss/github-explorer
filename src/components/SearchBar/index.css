@@ -3,14 +3,14 @@
     height: 44px;
     border: 2px solid #827d7d;
     border-radius: 24px;
-    margin: 0 auto;
+    margin: 50px auto;
     max-width: 584px;
 }
 
 input {
     width: 90%;
     margin: 4px 10px;
-    font-size: 21px;
+    font-size: 18px;
     height: -webkit-fill-available;
     padding-left: 17px;
     border: none;

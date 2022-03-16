@@ -1,22 +1,28 @@
 .list {
     height: 65vh;
     margin-top: 50px;
-    margin-left: 5%;
-    /* margin-right: 10%; */
-    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
     overflow-y: scroll;
+    min-width: 400px;
+}
+
+.list a {
+	text-decoration: none;
+	color: #64646a;
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    height: 70px;
-    background-color: white;
-    padding: 20px;
-    border-bottom: 1px solid lightgray;
-    margin: 5px;
-    border-radius: 5px;
-}
+	display: flex;
+	align-items: center;
+	height: 70px;
+	background-color: #f6f6f6;
+	padding: 10px;
+	
+	margin: 20px;
+	border-radius: 230px;
+}	
 .profile {
     display: flex;
     align-items: center;

@@ -38,7 +38,11 @@ const UserList = (props) => {
 
   return (
     <div className="UserList">
-      <SearchBar flow="userlist" placeholder="search for user" searchedTerm={userSearchTerm} />
+      <SearchBar
+        flow="userlist"
+        placeholder="search for user"
+        searchedTerm={userSearchTerm}
+      />
       <div className="list">{renderUserList()}</div>
     </div>
   );
