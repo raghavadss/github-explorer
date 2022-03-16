@@ -136,3 +136,8 @@
 .fa-envelope{
     margin-right: 10px;
 }
+
+.repoCard:hover{
+    background-color: #979794;
+    cursor: pointer;
+}
