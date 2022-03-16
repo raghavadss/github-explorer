@@ -1,0 +1,70 @@
+.repoCard{
+    display: flex;
+    justify-content:space-between;
+    margin: 0 25%;
+    border-bottom: 1px solid #252021;
+    padding: 8px;
+    align-self: center;
+}
+.title{
+    font-size: 19px;
+    font-weight: 600;
+}
+.content{
+    display: flex;
+    align-items: center;
+}
+.Basic {
+    display: flex;
+    justify-content: center;
+}
+.avatar {
+    width: 175px;
+    height: 175px;
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.detailsHeader{
+    font-weight: 600;
+}
+.details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.description{
+    width: 50%
+}
+.bio {
+    margin: 20px auto;
+    width: 400px;
+    padding: 0 10px;
+}
+.repos{
+    width: 100%;
+    padding-bottom: 30px;
+}
+.basicDetails {
+    margin: 25px 25px;
+}
+
+.metric {
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+    border-radius: 5px;
+    
+}
+
+.metricName {
+    padding-right: 10px;
+    justify-content: space-between;
+}
+
+.metrics {
+    display: flex;
+    justify-content: center;
+}

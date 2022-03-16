@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { updateSearchTerm } from "../actions";
-import "./SearchBar.css"
-const SearchBar = (props) => {
-  const [term, setTerm] = useState("");
+import { updateSearchTerm } from "../../actions";
+import "./index.css";
 
+const SearchBar = (props) => {
+  const [term, setTerm] = useState("");  
+  const { debouncedTerm, updateSearchTermAction, flow } = props;
+  
   const onInputChange = (e) => {
     setTerm(e.target.value);
   };
 
+  /*eslint-disable react-hooks/exhaustive-deps*/
   useEffect(() => {
-    if (!term && props.debouncedTerm) setTerm(props.debouncedTerm);
+    if (!term && debouncedTerm) setTerm(debouncedTerm);
   }, []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       const termObj = {};
-      termObj[props.flow] = term;
-      props.updateSearchTerm(termObj);
+      termObj[flow] = term;
+      updateSearchTermAction(termObj);
     }, 200);
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [term]);
+  }, [term, flow, updateSearchTermAction]);
 
   return (
-    <div className="">
-      <div className="">
+    <div className="SearchBar">
+      <div className="searchInput">
         <input
           className="prompt"
           type="text"
@@ -34,7 +37,6 @@ const SearchBar = (props) => {
           value={term}
           onChange={(e) => onInputChange(e)}
         />
-        <i className="search icon"></i>
       </div>
     </div>
   );
@@ -46,4 +48,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { updateSearchTerm })(SearchBar);
+export default connect(mapStateToProps, {
+  updateSearchTermAction: updateSearchTerm,
+})(SearchBar);

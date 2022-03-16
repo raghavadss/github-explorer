@@ -1,9 +1,8 @@
-import _ from "lodash";
 import githubAPI from "../api/githubAPI";
 import * as Types from "./types";
 
 export const searchUsers = (searchTerm) => async (dispatch) => {
-  if (!searchTerm) dispatch({ type: Types.SEARCH_USERS, payload: [] });
+  if (!searchTerm) dispatch({ type: Types.SEARCH_USERS, payload: { list: [], searchedTerm: searchTerm } });
   else {
     const response = await githubAPI.get("/search/users", {
       params: {
@@ -41,6 +40,6 @@ export const searchUserRepos = (id, searchTerm) => async (dispatch) => {
 
   dispatch({
     type: Types.FETCH_USER_REPOS,
-    payload: response.data.items,
+    payload: { list: response.data.items, searchedTerm: searchTerm },
   });
 };

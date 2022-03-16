@@ -1,10 +1,10 @@
 import React from "react";
-import "./Header.css"
+import "./index.css";
 
 const Header = () => {
   return (
     <div className="header">
-      <h1>Git Searcher</h1>
+      <h1>Github Searcher</h1>
     </div>
   )
 }
